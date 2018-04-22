@@ -12,14 +12,14 @@ The time change information is available by calling a subroutine that randomly i
 <b>A more realistic situations to consider would be:</b> While the above situation assumes that travel time changes on streets are synchronized with the time the vehicle arrives at an intersection, in reality, the algorithm should checks periodically traffic situations while on the street as well as well just at intersections. We may assume the period to be some time unit and travel time is measured with such unit. So the subroutine used to issue travel time change should also be synchronized with the time period. For example, if the travel time from interaction p to intersection q is τ(p,q) = 10 units, the program should check traffic and adjust path 10 times on the street (p,q). To deal with these situations, an iteration of the loop in your program should correspond to one time unit. <b>(This is not yet implemented)</b>
 
 <b><u>Format of the input graph</u> (small example):</b>
-n=5 
-s=1 
-t=5
-
-0,  23, 8,  35, 90
-23, 0,  15, 7,  10
-8,  15, 0,  28, 17
-35, 7,  28, 0,  6
-90,  10, 17, 6,  0
+n=5 <br>
+s=1 <br>
+t=5 <br>
+<br>
+0,  23, 8,  35, 90 <br>
+23, 0,  15, 7,  10 <br>
+8,  15, 0,  28, 17 <br>
+35, 7,  28, 0,  6 <br>
+90,  10, 17, 6,  0 <br>
 
 <b>Generate javadoc for more information about individual components of the code.</b>
