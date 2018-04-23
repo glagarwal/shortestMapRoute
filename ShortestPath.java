@@ -1,7 +1,5 @@
 import java.util.*;
-
 import java.util.Arrays;
-// import org.apache.commons.lang3.ArrayUtils;
 
 import static java.lang.System.out;
 import java.util.Random;
@@ -18,8 +16,16 @@ import java.util.Random;
  * @since 2018-04-22
  */
 class ShortestPath {
-    // A utility function to find the vertex with minimum distance value,
-    // from the set of vertices not yet included in shortest path tree
+    /**
+     * A utility function to find the vertex with minimum distance value, 
+     * from the set of vertices not yet included in shortest path tree
+     * 
+     * @author geeksforgeeks.org - Aakash Hasija
+     * @param dist[] minimum distance of every vertex from the start
+     * @param sptSet[] visited vertices
+     * @param n total number of vertices
+     * @return min_index minimum distance vertex of all the unvisited vertices.
+     */
     int minDistance(int dist[], Boolean sptSet[], int n) {
         // Initialize min value
         int min = Integer.MAX_VALUE, min_index = -1;
@@ -36,7 +42,12 @@ class ShortestPath {
     /**
      * Dijkstra's single source shortest path algorithm.
      * 
-     * @author Gaurav Agarwal
+     * @author geeksforgeeks.org-Aakash Hasija  &&  Gaurav Agarwal
+     * @param graph[][] the map graph given by the user.
+     * @param s starting vertex
+     * @param t destination vertex
+     * @param n total number of vertices in the graph
+     * @return path[] The shortest path available from s -> t
      */
     public int[] dijkstra(int graph[][], int s, int t, int n) {
 
@@ -68,6 +79,8 @@ class ShortestPath {
                 break;
         }
         //-----------
+        // System.out.println("Distance of t: "+dist[t]);
+        // stDist = dist[t];
         visitedPath.add(t);
         for (int a = t; a != s;) {
             visitedPath.add(parent[a]);
@@ -85,6 +98,10 @@ class ShortestPath {
      * between any two adjacent vertices on the graph.
      * 
      * @author Gaurav Agarwal
+     * @param graph[][] the map graph given by the user.
+     * @param n total number of vertices in the graph
+     * @return changedPath[] The updated edge(u,v) and it's weight. 
+     * Returns {-1,-1,-1} representing no change if the random function updates a self edge.
      */
     public int[] timeChange(int graph[][], int n) {
         Random rand = new Random();
@@ -109,6 +126,10 @@ class ShortestPath {
      * calculates the total distance of the path
      * 
      * @author Gaurav Agarwal
+     * @param graph[][] the map graph given by the user.
+     * @param path[] the shortest path currently being followed.
+     * @param n total number of vertices in the graph
+     * @return dist the total travel distance of the path.
      */
     public int distance(int graph[][], int path[], int n) {
         int dist = 0;
@@ -123,6 +144,7 @@ class ShortestPath {
      * prints the shortest path to be followed
      * 
      * @author Gaurav Agarwal
+     * @param path[] the shortest path currently being followed.
      */
     public void printPath(int path[]) {
         for (int p : path) {
@@ -135,6 +157,7 @@ class ShortestPath {
      * Takes in user input of the graph, starting and the destination node.
      * It starts traversing the nodes of the graph 
      * till the destination node is reached.
+     * The graph is updated periodically when a change in an edge is detected.
      * 
      * @author Gaurav Agarwal
      * @param args not being used.
@@ -221,7 +244,7 @@ t=5
 
 0,23,8,35,90              
 23,0,15,7,10
-8,15,0,28,0
+8,15,0,28,17
 35,7,28,0,6
 90,10,17,6,0
 ---------------------------------
