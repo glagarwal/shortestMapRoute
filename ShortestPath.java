@@ -15,7 +15,7 @@ import java.util.Random;
  * @author Gaurav Agarwal
  * @since 2018-04-22
  */
-class ShortestPath {
+public class ShortestPath {
     /**
      * A utility function to find the vertex with minimum distance value, 
      * from the set of vertices not yet included in shortest path tree
@@ -42,12 +42,12 @@ class ShortestPath {
     /**
      * Dijkstra's single source shortest path algorithm.
      * 
-     * @author geeksforgeeks.org-Aakash Hasija  &&  Gaurav Agarwal
+     * @author geeksforgeeks.org-Aakash Hasija  /  Gaurav Agarwal
      * @param graph[][] the map graph given by the user.
      * @param s starting vertex
      * @param t destination vertex
      * @param n total number of vertices in the graph
-     * @return path[] The shortest path available from s -> t
+     * @return path[] The shortest path available from s to t
      */
     public int[] dijkstra(int graph[][], int s, int t, int n) {
 
